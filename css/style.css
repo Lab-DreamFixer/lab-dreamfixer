@@ -1,0 +1,184 @@
+/* --- RESET E BASI --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; 
+}
+/* --- ENTRY OVERLAY: IL MOTORE DELLO SCROLL --- */
+#entry-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 1000;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+#entry-overlay::-webkit-scrollbar {
+    display: none;
+}
+#scroll-wrapper {
+    height: 600vh; /* SPAZIO LUNGO PER MOVIMENTO LENTO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#intro-section {
+    position: sticky;
+     top: 0;
+      height: 100vh;
+    display: flex;
+     flex-direction: column;
+      align-items: center;
+       justify-content: center;
+    width: 100%;
+}
+/* La scritta sta sotto */
+#img-scritta { 
+    width: 85%;
+    max-width: 700px; 
+    z-index: 1001; 
+}
+/* La clessidra MONUMENTALE */
+#img-clessidra { 
+    width: 700px; 
+    opacity: 0; 
+    position: absolute; 
+    z-index: 1002; 
+    transform: translateY(400px); 
+    pointer-events: none; /* Impedisce di bloccare il mouse */
+}
+/* IL TASTO: CENTRATO E ISTANTANEO */
+#entry-btn { 
+    position: absolute;
+    top: 50%; /* Altezza sopra la clessidra */
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    opacity: 0; 
+    pointer-events: none; 
+    z-index: 1003;
+    background: none;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px #fff, -2px -2px 4px #fff, 0 0 15px #fff;
+    transition: transform 0.3s ease; /* Solo per l'effetto hover */
+}
+#entry-btn:hover { 
+    color: #ffffff; 
+    text-shadow: 0 0 20px #00ffff; 
+    transform: translate(-50%, -50%) scale(1.05); 
+}
+/* --- MAINFRAME INTERNO --- */
+#bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.lang-container {
+     position: fixed;
+     top: 20px;
+     right: 30px;
+     z-index: 1005;
+     color: #fff;
+     font-size: 0.9rem;
+}
+.lang-container span {
+     cursor: pointer;
+}
+.lang-container span:hover {
+     color: #00ffff;
+}
+.marquee-overlay {
+     position: fixed;
+     top: 50%;
+     width: 100%;
+     transform: translateY(-50%);
+     z-index: 10;
+     pointer-events: none;
+     overflow: hidden; 
+}
+.marquee-text { 
+     display: inline-block;
+     font-size: 2.5rem;
+     font-weight: bold;
+     color: #000;
+     text-shadow: 2px 2px 5px #fff, -2px -2px 5px #fff;
+     animation: scroll-center 22s linear infinite;
+     white-space: nowrap;
+}
+@keyframes scroll-center {
+     from { transform: translateX(100%);}to { transform: translateX(-100%); }
+}
+/* --- SUGGERIMENTO DI SCROLL (BIANCO SU NERO) --- */
+#scroll-hint {
+    position: absolute;
+    bottom: 40px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    z-index: 1010;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+.scroll-arrow {
+    font-size: 1.5rem;
+    margin-top: 8px;
+    animation: bounce-hint 2s infinite ease-in-out;
+}
+@keyframes bounce-hint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+/* --- COPYRIGHT E FOOTER ASETTICO --- */
+.asettico-copy {
+    color: #ffffff; /* Grigio scuro: l'informazione non deve urlare */
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Leggera aura asettica */
+}
+/* Posizione sotto il bottone nella soglia */
+#intro-copyright {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+/* Barra fissa nel Lab (appare dopo il click) */
+#lab-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: #000;
+    border-top: 1px solid #222;
+    display: flex; /* Nascosto all'inizio */
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    opacity: 0; /* PARTE INVISIBILE */
+    transition: opacity 0.5s ease; /* COMPARSA FLUIDA */
+}

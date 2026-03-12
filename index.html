@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-DreamFixer</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/logo/dreamfixer_master32x32senzasfondonero.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- SOGLIA DI INGRESSO (A SCROLL) -->
+    <div id="entry-overlay">
+        <div id="scroll-wrapper">
+            <div id="intro-section">
+                <img src="assets/images/logo/dreamfixer.webp" id="img-scritta" alt="Dreamfixer">
+                 <div id="scroll-hint">
+                  <span id="hint-text">SCORRI PER SINTONIZZARE</span>
+                  <div class="scroll-arrow">↓</div>
+                 </div>
+                <img src="assets/images/logo/dreamfixer_clessidra_nosfondo.webp" id="img-clessidra" alt="Clessidra">
+                <button id="entry-btn" class="glitch-start">Sintonizzati con il Lab</button>
+                <!-- DENTRO IL TUO INTRO-SECTION (Sotto il bottone) -->
+                <div id="intro-copyright" class="asettico-copy">2026 © lab-dreamfixer</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRADUZIONI -->
+    <div class="lang-container">
+        <span onclick="changeLang('it')">Ita</span> | 
+        <span onclick="changeLang('en')">Eng</span> | 
+        <span onclick="changeLang('ru')">Rus</span>
+    </div>
+
+    <!-- IL MAINFRAME -->
+    <div id="bg-container"></div>
+    <div class="marquee-overlay">
+        <div class="marquee-text" id="main-marquee">
+            +++ LAB-DREAMFIXER +++ WORK IN PROGRESS +++ RIPARAZIONE SOGNI +++
+        </div>
+    </div>
+  <footer id="lab-footer">
+        <div class="asettico-copy">
+            2026 © lab-dreamfixer 
+        </div>
+    </footer>
+<audio id="audio-player" loop></audio>
+    <script src="js/script.js"></script>
+</body>
+</html>
