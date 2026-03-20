@@ -8,17 +8,17 @@ const playlist = [
 ];
 const dictionary = {
     it: { 
-        marquee: "+++ LAB-DREAMFIXER +++ RIPARATORE DI SOGNI +++ IN FASE DI CONFIGURAZIONE +++", 
+        marquee: "+++ LAB-DREAMFIXER +++ IN FASE DI CONFIGURAZIONE +++ RIPARATORE DI SOGNI +++", 
         btn: "Sintonizzati con il Lab",
         hint: "SCORRI PER SINTONIZZARE"
     },
     en: { 
-        marquee: "+++ LAB-DREAMFIXER +++ MANDER OF DREAMS +++ TUNING IN PROGRESS +++", 
+        marquee: "+++ LAB-DREAMFIXER +++ TUNING IN PROGRESS +++ MANDER OF DREAMS +++", 
         btn: "Tune into the Lab",
         hint: "SCROLL TO TUNE"
     },
     ru: { 
-        marquee: "+++ LAB-DREAMFIXER +++ РЕМОНТНИК СНОВ +++ идет настройка +++", 
+        marquee: "+++ LAB-DREAMFIXER +++ идет настройка +++ РЕМОНТНИК СНОВ +++", 
         btn: "Настройся на Лабораторию", 
         hint: "ПРОКРУТИТЕ ДЛЯ НАСТРОЙКИ"
     }
